@@ -1,13 +1,13 @@
 services:
   frontend:
     build:
-      context: ./src/frontend
+      context: ./frontend
       dockerfile: Dockerfile
     container_name: frontend
     ports:
       - "5173:5173"
     volumes:
-      - ./src/frontend:/usr/src/frontend
+      - ./frontend:/usr/src/frontend
       - /usr/src/frontend/node_modules
     networks:
       - react
