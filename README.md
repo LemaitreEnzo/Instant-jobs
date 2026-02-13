@@ -1,16 +1,123 @@
-# React + Vite
+# 🚀 Instant Jobs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Une plateforme moderne de recherche d'emploi et de recrutement construite avec React et Vite.
 
-Currently, two official plugins are available:
+## 📋 Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Instant Jobs est une application web full-stack qui facilite la mise en relation entre employeurs et candidats. La plateforme offre une interface intuitive pour publier des offres d'emploi, rechercher des opportunités et gérer les candidatures.
 
-## React Compiler
+## ✨ Fonctionnalités
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- 🔍 Recherche avancée d'offres d'emploi
+- 📝 Publication et gestion d'annonces
+- 👤 Profils utilisateurs (candidats et employeurs)
+- 📄 Gestion des candidatures
+- 🎨 Interface utilisateur moderne et responsive
+- 🐳 Déploiement simplifié avec Docker
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Utilisées
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend
+
+- **React** - Bibliothèque JavaScript pour construire l'interface utilisateur
+- **Vite** - Build tool moderne et rapide
+- **CSS** - Stylisation personnalisée
+- **Tailwind** - Stylisation personnalisée
+
+### Backend
+
+- **Node.js** - Environnement d'exécution JavaScript côté serveur
+- (Technologies spécifiques à définir selon votre stack backend)
+
+### DevOps
+
+- **Docker** - Conteneurisation de l'application
+- **Docker Compose** - Orchestration des services
+
+### Installation locale
+
+1. **Cloner le repository**
+
+```bash
+git clone https://github.com/LemaitreEnzo/Instant-jobs.git
+cd Instant-jobs
+```
+
+2. **Installation du Backend**
+
+```bash
+cd backend
+npm install
+```
+
+### Configuration
+
+Créez un fichier `.env` dans les dossiers `frontend` et `backend` avec les variables d'environnement nécessaires :
+
+```env
+# Exemple de variables d'environnement
+VITE_API_URL=http://localhost:3000
+DATABASE_URL=your_database_url
+```
+
+## 🚀 Utilisation
+
+### Développement local
+
+L'application sera disponible sur `http://localhost:5173`
+
+**Backend** (dans le dossier `backend`) :
+
+```bash
+npm run dev
+```
+
+### Avec Docker
+
+Lancer l'application complète avec Docker Compose :
+
+```bash
+docker-compose up -d
+```
+
+Pour construire les images :
+
+```bash
+docker-compose build
+```
+
+Pour arrêter les services :
+
+```bash
+docker-compose down
+```
+
+### Avec Github
+
+A chaque merge d'une branche vers la branche main faire un pull pour mettre à jour environnement:
+
+```bash
+git pull
+```
+
+## 📁 Structure du Projet
+
+```
+Instant-jobs/
+├── frontend/              # Application React
+│   ├── src/              # Code source
+│   ├── public/           # Assets statiques
+│   └── package.json      # Dépendances frontend
+├── backend/              # API Backend
+│   ├── src/              # Code source
+│   └── package.json      # Dépendances backend
+├── docker-compose.yml    # Configuration Docker
+├── .dockerignore         # Fichiers ignorés par Docker
+└── README.md            # Documentation
+```
+
+## 🔧 Scripts Disponibles
+
+### Backend
+
+- `npm run dev` - Lance le serveur en mode développement
