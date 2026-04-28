@@ -24,6 +24,7 @@ jest.mock("models/specialities.model", () => ({
     }
 }));
 
+
 describe("GET SPECIALITIES", () => {
     beforeEach(() => {
         jest.clearAllMocks();
