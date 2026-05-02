@@ -6,8 +6,9 @@ import {
   updateCampus,
 } from "controllers/campus.controller";
 import express from "express";
+import promotionsRoutes from "./promotions.routes";
 
-const campusRoutes = express.Router();
+const campusRoutes = express.Router({ mergeParams: true });
 
 // GET
 campusRoutes.get("/", getAllCampus);
@@ -21,5 +22,8 @@ campusRoutes.put("/:slug", updateCampus);
 
 // DELETE
 campusRoutes.delete("/:slug", deleteCampus);
+
+// PROMOTIONS ROUTES
+campusRoutes.use("/:slug/promotions", promotionsRoutes);
 
 export default campusRoutes;
