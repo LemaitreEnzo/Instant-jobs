@@ -10,6 +10,7 @@ import express from "express";
 
 import usersRoutes from "routes/users.routes";
 import campusRoutes from "routes/campus.routes";
+import promotionsRoutes from "./promotions.routes";
 import { Organization } from "src/models/organizations.model";
 
 
@@ -35,5 +36,8 @@ organizationsRoutes.use("/:slug/users", usersRoutes);
 
 // CAMPUS ROUTES
 organizationsRoutes.use("/:slug/campus", campusRoutes);
+
+// SUBSPECIALITIES ROUTES
+organizationsRoutes.use("/:slug/promotions", promotionsRoutes);
 
 export default organizationsRoutes;
