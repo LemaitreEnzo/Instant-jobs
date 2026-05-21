@@ -5,7 +5,7 @@ interface SubSpecialities extends Model<InferAttributes<SubSpecialities>, InferC
     id: CreationOptional<number>;
     name: string;
     slug: string;
-    specialities_id: number;
+    specialityId: number;
 }
 
 export const SubSpecialities = sequelize.define<SubSpecialities>('SubSpecialities', {
@@ -24,7 +24,7 @@ export const SubSpecialities = sequelize.define<SubSpecialities>('SubSpecialitie
         allowNull: false,
         type: DataTypes.STRING
     },
-    specialities_id: {
+    specialityId: {
         allowNull: false,
         type: DataTypes.INTEGER
     }
