@@ -11,7 +11,6 @@ import express from "express";
 import usersRoutes from "routes/users.routes";
 import campusRoutes from "routes/campus.routes";
 import promotionsRoutes from "./promotions.routes";
-import { Organization } from "src/models/organizations.model";
 
 
 const organizationsRoutes = express.Router();
