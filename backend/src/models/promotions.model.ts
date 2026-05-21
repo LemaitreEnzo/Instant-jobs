@@ -15,6 +15,7 @@ interface Promotions extends Model<
   id: CreationOptional<number>;
   slug: string,
   name: string,
+  organisationId: number;
 }
 
 export const Promotions = sequelize.define<Promotions>("Promotions", {
@@ -27,5 +28,9 @@ export const Promotions = sequelize.define<Promotions>("Promotions", {
   },
   name: {
     type: DataTypes.STRING,
+  },
+  organisationId: {
+    allowNull: false,
+    type: DataTypes.INTEGER,
   },
 });

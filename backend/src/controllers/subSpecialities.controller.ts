@@ -2,42 +2,67 @@ import type { Request, Response } from "express";
 import { SubSpecialities } from "src/models/subSpecialities.model";
 
 
-export const getAllSubSpecialities = async (req : Request, res : Response) => {
+export const getAllSubSpecialities = async (req: Request, res: Response) => {
     try {
-        
+        const subSpecialities = await SubSpecialities.findAll();
+
+        res.status(200);
+        res.json({ subSpecialities });
     } catch (error) {
-        
+        res.status(500);
+        res.json(error);
     }
 }
 
-export const getOneSubSpecialities = async (req : Request, res : Response) => {
+export const getOneSubSpeciality = async (req: Request, res: Response) => {
     try {
-        
+        const slug = req.params.slug;
+        const subSpeciality = await SubSpecialities.findOne({ where: { slug: slug } });
+
+        res.status(200);
+        res.json({ subSpeciality });
     } catch (error) {
-        
+        res.status(500);
+        res.json(error);
     }
 }
 
-export const createSubSpecialities = async (req : Request, res : Response) => {
+export const createSubSpeciality = async (req: Request, res: Response) => {
     try {
-        
+        const data = req.body;
+        const subSpeciality = await SubSpecialities.create(data);
+
+        res.status(201);
+        res.json({ subSpeciality });
     } catch (error) {
-        
+        res.status(500);
+        res.json(error);
     }
 }
 
-export const updateSubSpecialities = async (req : Request, res : Response) => {
+export const updateSubSpeciality = async (req: Request, res: Response) => {
     try {
-        
+        const slug = req.params.slug;
+        const data = req.body;
+        const subSpeciality = await SubSpecialities.update(data, { where: { slug: slug } });
+
+        res.status(206);
+        res.json({ subSpeciality });
     } catch (error) {
-        
+        res.status(500);
+        res.json(error);
     }
 }
 
-export const deleteSubSpecialities = async (req : Request, res : Response) => {
+export const deleteSubSpeciality = async (req: Request, res: Response) => {
     try {
-        
+        const slug = req.params.slug;
+        const subSpeciality = await SubSpecialities.destroy({ where: { slug: slug } });
+
+        res.status(204);
+        res.json();
     } catch (error) {
-        
+        res.status(500);
+        res.json(error);
     }
 }

@@ -7,7 +7,7 @@ import { getAllSpecialities, getOneSpeciality, createSpeciality, updateSpeciali
 } from "controllers/specialities.controller"
 
 import express from "express";
-import subSpecialities from "routes/subspecialities.routes";
+import subSpecialities from "routes/subSpecialities.routes";
 
 import { Specialities } from "src/models/specialities.model"
 
@@ -27,6 +27,6 @@ specialitiesRoutes.patch("/:slug", updateSpeciality);
 specialitiesRoutes.delete("/:slug", deleteSpeciality);
 
 // SubSpecialities routes
-specialitiesRoutes.use("/:slug/subspecialities", subSpecialities);
+specialitiesRoutes.use("/:slug/sub-specialities", subSpecialities);
 
 export default specialitiesRoutes;
