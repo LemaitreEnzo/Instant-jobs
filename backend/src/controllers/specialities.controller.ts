@@ -13,7 +13,7 @@ export const getAllSpecialities = async (req: Request, res: Response) => {
 export const getOneSpeciality = async (req: Request, res: Response) => {
   try {
     const speciality = await Specialities.findOne({
-      where: { id: req.params.id },
+      where: { slug: req.params.slug },
     });
 
     if (!speciality) {
@@ -38,7 +38,7 @@ export const createSpeciality = async (req: Request, res: Response) => {
 export const updateSpeciality = async (req: Request, res: Response) => {
   try {
     const speciality = await Specialities.findOne({
-      where: { id: req.params.id },
+      where: { slug: req.params.slug },
     });
 
     if (!speciality) {
@@ -46,7 +46,7 @@ export const updateSpeciality = async (req: Request, res: Response) => {
     }
 
     const specialityUpdated = await Specialities.update(req.body, {
-      where: { id: req.params.id },
+      where: { slug: req.params.slug },
     });
 
     res.status(206).json({ specialityUpdated });
@@ -58,7 +58,7 @@ export const updateSpeciality = async (req: Request, res: Response) => {
 export const deleteSpeciality = async (req: Request, res: Response) => {
   try {
     const speciality = await Specialities.findOne({
-      where: { id: req.params.id },
+      where: { slug: req.params.slug },
     });
 
     if (!speciality) {

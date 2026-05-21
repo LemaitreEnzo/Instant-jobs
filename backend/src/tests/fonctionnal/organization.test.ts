@@ -6,6 +6,7 @@ import getSlug from "../../../utils/slugHelper";
 import getEnv from "../../../utils/envHelper";
 
 const VERSION = getEnv("VERSION");
+const ORGANIZATION_URL = `/${VERSION}/organizations`;
 
 jest.mock("models/organizations.model", () => ({
     Organization: {
@@ -23,7 +24,7 @@ describe("GET ORGANIZATIONS", () => {
     });
 
     it("should return 200", async () => {
-        const res = await request(app).get(`/${VERSION}/organizations`);
+        const res = await request(app).get(ORGANIZATION_URL);
         expect(res.status).toBe(200);
     });
 
@@ -33,7 +34,7 @@ describe("GET ORGANIZATIONS", () => {
             { id: 2, name: "Credit Agricole", slug: getSlug("Credit Agricole") } as any
         ]);
 
-        const res = await request(app).get(`/${VERSION}/organizations`);
+        const res = await request(app).get(ORGANIZATION_URL);
         expect(res.body).toEqual({
             organizations: [
                 { id: 1, name: "La Manu", slug: getSlug("La Manu") },
@@ -47,7 +48,7 @@ describe("GET ORGANIZATIONS", () => {
             { id: 1, name: "La Manu", slug: getSlug("La Manu") } as any,
         );
 
-        const res = await request(app).get(`/${VERSION}/organizations/la-manu`);
+        const res = await request(app).get(`${ORGANIZATION_URL}/la-manu`);
         expect(res.body).toEqual({
             organization: {
                 id: 1,
@@ -70,7 +71,7 @@ describe("CREATE ORGANIZATION", () => {
         );
 
         const res = await request(app)
-            .post(`/${VERSION}/organizations`)
+            .post(ORGANIZATION_URL)
             .send({ name: "La Manu", slug: getSlug("La Manu") });
 
         expect(res.status).toBe(201);
@@ -94,7 +95,7 @@ describe("UPDATE ORGANIZATION", () => {
         );
 
         const res = await request(app)
-            .put(`/${VERSION}/organizations/la-manu`)
+            .put(`${ORGANIZATION_URL}/la-manu`)
             .send({ name: "ESC Compiègne", slug: getSlug("ESC Compiègne") });
 
         expect(res.status).toBe(206);
@@ -116,7 +117,7 @@ describe("DELETE ORGANIZATION", () => {
             { id: 1, name: "La Manu", slug: getSlug("La Manu") } as any,
         );
 
-        const res = await request(app).delete(`/${VERSION}/organizations/la-manu`);
+        const res = await request(app).delete(`${ORGANIZATION_URL}/la-manu`);
         expect(res.status).toBe(204);
         expect(Organization.destroy).toHaveBeenCalled();
     });

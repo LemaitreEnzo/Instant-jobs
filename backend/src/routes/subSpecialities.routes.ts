@@ -3,7 +3,6 @@ import {
     createSubSpeciality, updateSubSpeciality, deleteSubSpeciality 
 } from "src/controllers/subSpecialities.controller"; 
 import express from 'express'
-import mediasRoutes from "routes/medias.routes";
 
 const subSpecialities = express.Router();
 

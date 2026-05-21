@@ -3,7 +3,6 @@ import {
     createPromotion, updatePromotion, deletePromotion 
 } from "src/controllers/promotions.controller";
 import express from "express";
-import mediasRoutes from "routes/medias.routes";
 import specialitiesRoutes from "./specialities.routes";
 
 const promotionsRoutes = express.Router({ mergeParams: true }); 
