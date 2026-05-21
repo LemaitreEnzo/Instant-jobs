@@ -7,6 +7,7 @@ import {
 } from "controllers/users.controller";
 import express from "express";
 import mediasRoutes from "routes/medias.routes";
+import applicationsRoutes from "./applications.routes";
 
 const usersRoutes = express.Router();
 
@@ -25,5 +26,8 @@ usersRoutes.delete("/:id", deleteUser);
 
 // Medias routes
 usersRoutes.use("/:id/docs/medias", mediasRoutes);
+
+// Applications routes
+usersRoutes.use("/:id/applications", applicationsRoutes);
 
 export default usersRoutes;

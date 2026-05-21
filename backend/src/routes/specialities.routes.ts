@@ -2,14 +2,16 @@
    RESSOURCE : SPECIALITIES
 ========================= */
 
-import { getAllSpecialities, getOneSpeciality, createSpeciality, updateSpeciality,
-    deleteSpeciality
-} from "controllers/specialities.controller"
+import {
+  createSpeciality,
+  deleteSpeciality,
+  getAllSpecialities,
+  getOneSpeciality,
+  updateSpeciality,
+} from "controllers/specialities.controller";
 
 import express from "express";
 import subSpecialities from "routes/subSpecialities.routes";
-
-import { Specialities } from "src/models/specialities.model"
 
 const specialitiesRoutes = express.Router();
 

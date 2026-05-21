@@ -2,14 +2,16 @@
    RESSOURCE : APPLICATIONS
 ========================= */
 
-import { getAllApplications, getOneApplication, createApplication, updateApplication,
-    deleteApplication
-} from "controllers/application.controller"
+import {
+  createApplication,
+  deleteApplication,
+  getAllApplications,
+  getOneApplication,
+  updateApplication,
+} from "controllers/application.controller";
 
 import express from "express";
 import mediasRoutes from "routes/medias.routes";
-
-import { Application } from "src/models/applications.model"
 
 const applicationsRoutes = express.Router();
 

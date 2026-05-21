@@ -1,5 +1,5 @@
-import { sequelize } from "./config/db";
 import app from "./app";
+import { sequelize } from "./config/db";
 import getEnv from "./utils/envHelper";
 
 const PORT = Number(getEnv("PORT"));

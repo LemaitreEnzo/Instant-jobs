@@ -6,7 +6,7 @@ export const sequelize = new Sequelize({
   host: getEnv("DB_HOST"),
   port: Number(getEnv("DB_PORT")),
   database: getEnv("DB_NAME"),
-  username: getEnv("DB_USERNAME"),
+  username: getEnv("DB_USER"),
   password: getEnv("DB_PASSWORD"),
   logging: false,
 });
